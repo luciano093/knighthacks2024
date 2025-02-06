@@ -75,7 +75,7 @@ async function CallGeminiGenerateTable({ prompt }: {prompt: string}) {
     const data = await api.gemini.prompt({prompt: prompt});
 
     try {
-        const json = JSON.parse(data.slice(8, data.length - 3)) as data[];
+        const json = JSON.parse(data.slice(8, data.length - 4)) as data[];
 
         return(
             <div>
@@ -84,7 +84,10 @@ async function CallGeminiGenerateTable({ prompt }: {prompt: string}) {
         )
     } catch {
         return(
-            <CallGeminiGenerateTable prompt={prompt} />
+            <>
+            <h3>Error in representing the JSON response</h3>
+            <h2>{data}</h2>
+            </>
         )
     }
 }

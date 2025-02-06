@@ -29,7 +29,7 @@ export default function Table({ json }: { json: data[] }) {
                     {item.name}
                   </td>
                   <td className="p-4 text-left text-gray-500 min-w-[100px]">
-                    {item.cost === "Free" ? "Free" : item.cost.startsWith("$")  ? item.cost : `$${item.cost}`}
+                    {item.cost === "Free" ? "Free" :`$${item.cost}`}
                   </td>
                   <td className="p-4 text-left text-gray-600">
                     {item.description}
